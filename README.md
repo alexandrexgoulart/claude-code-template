@@ -11,64 +11,51 @@ Este template completo do Claude Code já está configurado com **229 skills** e
 1. **Exemplo com o projeto Isabella Siqueira Advocacia:**
 ```bash
 # Navegar até o diretório do projeto
-cd "/c/Users/Alexandre/OneDrive/((((IMPORTANTE))))/Clientes VirtuAi 20/Opencode_Teste/isabella-siqueira-advocacia"
+cd "/c/Users/Alexandre/OneDrive/((((IMPORTANTE))))/Clientes VirtuAi 2.0/Opencode_Teste/isabella-siqueira-advocacia"
 
-# Copiar o template completo
-cp -r "/caminho/do/template/NOVA PASTA/.claude" .claude/
+# Copiar o template completo do GitHub
+git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
+cp -r temp-template/template/.claude .claude/
+rm -rf temp-template
 ```
 
 ### Para projetos COM pasta .claude existente:
 
 1. **Backup da configuração existente:**
 ```bash
-cp -r .claude/.claude.backup
+cp -r .claude .claude.backup.$(date +%Y%m%d_%H%M%S)
 ```
 
-2. **Mesclar conteúdo do template:**
+2. **Mesclar TODO o conteúdo do template:**
 ```bash
-# Copiar todas as pastas do template
-cp -r "/caminho/do/template/NOVA PASTA/.claude"/* .claude/
+# Clonar o template do GitHub
+git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
 
-# Ou mesclar skills e agentes adicionais:
-cp -r "/caminho/do/template/NOVA PASTA/.claude/skills"/* .claude/skills/
-cp -r "/caminho/do/template/NOVA PASTA/.claude/agents"/* .claude/agents/
+# Mesclar todo o conteúdo do template (todas as pastas)
+cp -r temp-template/template/.claude/* .claude/
+
+# Limpar diretório temporário
+rm -rf temp-template
 ```
 
 ## Atualizar Memória do Projeto:
 
 1. **Para projetos novos:**
 ```bash
-cp -r "/caminho/do/template/NOVA PASTA/.claude/memory/project/current_project.md" .claude/memory/project/
-```
+# Criar memória específica para o projeto Isabella
+cat << 'EOF' > .claude/memory/project/isabella-project.md
+---
+name: Isabella Siqueira Advocacia Website
+description: Projeto do website para escritório de advocacia
+type: project
+---
 
-2. **Atualizar memória do projeto específico:**
-```bash
-# Atualizar memória do projeto Isabella
-cp "/caminho/do/template/NOVA PASTA/.claude/memory/project/isabella-project.md" .claude/memory/project/
-```
+# Project Context: Isabella Siqueira Advocacia
 
-## Estrutura Completa do Claude Code:
-
-```
-.claude/
-├── agents/          # 92 agentes especializados
-├── commands/        # Comandos disponíveis
-├── memory/         # Sistema de memória persistente
-├── projects/        # Configurações de projeto
-├── prompts/         # Prompts organizados
-├── rules/          # Regras e configurações
-├── skills/         # 229 skills disponíveis
-└── tools/          # Ferramentas auxiliares
-```
-
-## Comandos Úteis:
-
-- **Setup automático completo** do Claude Code
-- **Integração fácil** com projetos existentes
-- **Documentação completa** e skills prontas para uso
-
-## Benefícios:
-
-- **229 skills** pré-configuradas
-- **92 agentes** especializados
-- **Sistema de memória** funcional
+## Current Project
+- Name: Website Isabella Siqueira Advocacia
+- Type: Website jurídico profissional
+- Technologies: HTML, CSS, JavaScript
+- Development Stage: Implementation and testing
+- Focus Areas: Design profissional, informações legais, contato fácil
+- Client: Isabella Siqueira - Advogada
