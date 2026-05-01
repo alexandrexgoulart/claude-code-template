@@ -1,47 +1,29 @@
-<<<<<<< HEAD
 # Claude Code Template
 
-Template completo do Claude Code com todas as configurações necessárias para desenvolvimento ágil.
-
-## Estrutura do Template
-
-- **template/.claude/** - Configurações completas do Claude Code
-- **scripts/** - Scripts de automação
+Template completo do Claude Code com todas as configurações necessárias.
 
 ## Como Usar
+Para projetos novos:
+1. Clone este repositório
+2. Execute o setup automático
+3. Use o Claude Code normalmente
 
-\`\`\`bash
-# Setup inicial
-./setup.sh
+## Documentação
+- [Guia em Português](docs/USAGE-PT.md)
 
-# Para novos projetos
-./new-project-setup.sh
-
-# Limpar memória de projeto anterior  
-./clear-memory.sh
-\`\`\`
-
-## Configuração Incluída
-
-O template já vem com:
-- 229 skills disponíveis
+## Configuração
+Template já configurado com:
+- 229 skills pré-configuradas
+- 92 agentes especializados
 - Sistema de memória funcional
-- Configuração de agentes e comandos
-- Regras e padrões pré-configurados
+- Todos os comandos e regras prontos para uso
 
 ## Uso
 
-Para usar em seus projetos:
-1. Clone o repositório
-2. Execute \`./setup.sh\`
-3. Comece a usar o Claude Code
+O template já está integrado! Tudo que você precisa fazer é usar os comandos do Claude Code normalmente.
 
-## Scripts
+## Benefícios
 
-- **setup.sh** - Configura o template no projeto atual
-- **new-project-setup.sh** - Setup automático para novos projetos  
-- **clear-memory.sh** - Limpa memória de projetos anteriores
-=======
-# claude-code-template
-Template completo do Claude Code com skills, agentes e configurações pré-configuradas
->>>>>>> 5112ed57a58023d5a4d6d35adb4a11d9dd3aadcc
+- **Setup automático** completo do Claude Code
+- **Integração fácil** com projetos existentes
+- **Documentação completa** e skills prontas para uso
