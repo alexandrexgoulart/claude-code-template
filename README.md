@@ -10,6 +10,7 @@ Para projetos novos:
 
 ## Documentação
 - [Guia em Português](docs/USAGE-PT.md)
+- [Exemplos Práticos](docs/EXEMPLO-USO.md)
 
 ## Configuração
 Template já configurado com:
