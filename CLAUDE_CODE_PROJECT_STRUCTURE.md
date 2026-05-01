@@ -28,10 +28,6 @@ A pasta `.claude` contém todos os recursos essenciais do framework CLAUDE Code:
 └── settings.local.json  # Configurações locais
 ```
 
-## Estrutura do template
-
-O diretório `claude-code-template/template/.claude` deve espelhar a estrutura da pasta `.claude` do projeto principal.
-
 ## Onde instalar novos recursos
 
 Ao adicionar novos recursos de repositórios clonados:
@@ -48,18 +44,18 @@ Ao adicionar novos recursos de repositórios clonados:
 
 ## Boas práticas para integração
 
-1. **Sempre verificar** se os recursos já existem antes de copiar
-2. **Manter consistência** na estrutura de diretórios
-3. **Evitar duplicação** de arquivos
-4. **Preservar a estrutura existente** do projeto
-5. **Usar _temp_repos** para repositórios clonados temporariamente
+- Sempre verificar se os recursos já existem antes de copiar
+- Manter consistência na estrutura de diretórios
+- Evitar duplicação de arquivos
+- Preservar a estrutura existente do projeto
+- Manter repositórios em `_temp_repos` para consultas futuras
 
 ## Processo de integração
 
 1. Clonar repositórios na pasta `_temp_repos`
 2. Analisar conteúdo dos repositórios
 3. Copiar apenas os recursos necessários para os diretórios corretos
-4. Remover repositório temporário após integração
+4. Manter repositório temporário para consulta futura
 5. Verificar consistência da estrutura
 6. Testar funcionalidades após integração
 
@@ -69,10 +65,12 @@ Ao adicionar novos recursos de repositórios clonados:
 - **Sempre** usar `_temp_repos` para clonagem temporária
 - **Manter** a estrutura `.claude` consistente entre projeto e template
 - **Verificar** compatibilidade antes de integrar
+- **Manter repositórios em `_temp_repos` para consultas futuras
 
-## Atualizações recentes
+## Atualizações Recentes
 
 A estrutura foi atualizada para incluir:
-- Diretório `.claude/tools/hooks/` para organização dos hooks de automação
+- Diretório `.claude/tools/hooks/` para melhor organização dos hooks de automação
 - Sincronização automática entre projeto principal e template
 - Melhor organização de plugins e skills
+- Preservação de repositórios temporários para consulta futura
