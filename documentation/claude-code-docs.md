@@ -12,18 +12,31 @@ cd "/c/Users/Alexandre/OneDrive/((((IMPORTANTE))))/Clientes VirtuAi 2.0/Opencode
 # Copiar o template completo do GitHub
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
 cp -r temp-template/template/.claude .claude/
-rm -rf temp-template
+# No Windows, use:
+# xcopy temp-template\template\claude\* .claude\ /E /I
+# ou
+# Copy-Item -Path "temp-template\template\claude\*" -Destination ".claude" -Recurse
+rm -r -fo temp-template
+
 ```
 
 ### Para projetos COM pasta .claude existente:
 ```bash
 # Backup da configuração existente
 cp -r .claude .claude.backup.$(date +%Y%m%d_%H%M%S)
+# No Windows, use:
+# $date = Get-Date -Format "yyyyMMdd_HHmmss"
+# Copy-Item -Path ".claude" -Destination ".claude.backup.$date" -Recurse
 
 # Mesclar todo o conteúdo do template
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
 cp -r temp-template/template/.claude/* .claude/
-rm -rf temp-template
+# No Windows, use:
+# xcopy temp-template\template\claude\* .claude\ /E /I
+# ou
+# Copy-Item -Path "temp-template\template\claude\*" -Destination ".claude" -Recurse
+rm -r -fo temp-template
+
 ```
 
 ## Atualizar Memória do Projeto:
