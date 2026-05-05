@@ -18,13 +18,15 @@ A pasta `.claude` contém todos os recursos essenciais do framework CLAUDE Code:
 .claude/
 ├── agents/           # Agentes especializados
 ├── commands/         # Comandos personalizados
-├── memory/          # Sistema de memória do projeto
-├── projects/        # Configurações de projetos
-├── prompts/        # Prompts personalizados
-├── rules/          # Regras e diretrizes
-├── skills/         # Habilidades e competências
-├── tools/          # Ferramentas auxiliares
-├── tools/hooks/   # Hooks para automação
+├── memory/            # Sistema de memória do projeto
+├── mcp-servers/      # Servidores MCP para integração com ferramentas externas
+├── plugins/          # Plugins e extensões do Claude Code
+├── projects/         # Configurações de projetos
+├── prompts/          # Prompts personalizados
+├── rules/           # Regras e diretrizes
+├── skills/           # Habilidades e competências
+├── tools/           # Ferramentas auxiliares
+├── tools/hooks/     # Hooks para automação
 └── settings.local.json  # Configurações locais
 ```
 
@@ -70,7 +72,7 @@ Ao adicionar novos recursos de repositórios clonados:
 ## Atualizações Recentes
 
 A estrutura foi atualizada para incluir:
-- Diretório `.claude/tools/hooks/` para melhor organização dos hooks de automação
+- Diretório `.claude/mcp-servers/` para melhor organização dos servidores MCP
 - Sincronização automática entre projeto principal e template
 - Melhor organização de plugins e skills
 - Preservação de repositórios temporários para consulta futura
