@@ -1,62 +1,77 @@
-# Claude Code Template - Documentação Completa
+# Claude Code Template - Documentação Completa e Atualizada
+
+## Estrutura Atualizada do Projeto
+
+O template do Claude Code foi completamente atualizado e aprimorado para refletir as práticas
+mais recentes do Claude Code com:
+- 229 skills pré-configuradas para diferentes casos de uso
+- 92 agentes especializados para automação de tarefas
+- Sistema de memória avançado para contexto persistente
+- Integração completa com GitHub e outros serviços
 
 ## Como Usar em Projetos Existentes
 
 ### Para projetos SEM pasta .claude existente:
 
-1. **Exemplo com o projeto Isabella Siqueira Advocacia:**
 ```bash
-# Navegar até o diretório do projeto
-cd "/c/Users/Alexandre/OneDrive/((((IMPORTANTE))))/Clientes VirtuAi 2.0/Opencode_Teste/isabella-siqueira-advocacia"
-
-# Copiar o template completo do GitHub
+# Clonar o template oficial
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
 cp -r temp-template/template/.claude .claude/
-# No Windows, use:
-# xcopy temp-template\template\claude\* .claude\ /E /I
-# ou
-# Copy-Item -Path "temp-template\template\claude\*" -Destination ".claude" -Recurse
 rm -r -fo temp-template
-
 ```
 
 ### Para projetos COM pasta .claude existente:
 ```bash
-# Backup da configuração existente
+# Backup da configuração existente (recomendado)
 cp -r .claude .claude.backup.$(date +%Y%m%d_%H%M%S)
-# No Windows, use:
-# $date = Get-Date -Format "yyyyMMdd_HHmmss"
-# Copy-Item -Path ".claude" -Destination ".claude.backup.$date" -Recurse
 
 # Mesclar todo o conteúdo do template
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
 cp -r temp-template/template/.claude/* .claude/
-# No Windows, use:
-# xcopy temp-template\template\claude\* .claude\ /E /I
-# ou
-# Copy-Item -Path "temp-template\template\claude\*" -Destination ".claude" -Recurse
 rm -r -fo temp-template
-
 ```
 
-## Atualizar Memória do Projeto:
+## Estrutura Completa do Claude Code:
+```
+.claude/
+├── agents/          # Agentes especializados para tarefas específicas
+├── commands/         # Comandos personalizados do Claude Code
+├── memory/            # Sistema de memória para contexto persistente
+├── mcp-servers/      # Servidores MCP para integração com ferramentas externas
+├── plugins/          # Plugins e extensões do Claude Code
+├── projects/         # Gerenciamento de projetos e sessões
+├── prompts/          # Prompts do sistema
+├── rules/            # Regras e convenções do projeto
+├── skills/           # Skills e habilidades do Claude Code
+├── templates/         # Templates para geração de código
+└── tools/           # Scripts e utilitários auxiliares
+```
 
-### Para projetos NOVOS:
+## Comandos Úteis:
+
+- **Setup automático** completo do Claude Code
+- **Integração fácil** com projetos existentes
+- **Documentação completa** e skills prontas para uso
+- **Sistema de memória** avançado para contexto persistente
+- **229 skills pré-configuradas** para diversos casos de uso
+- **92 agentes especializados** para automação de tarefas
+
+## Atualização Automática da Memória
+
+Para manter o contexto atualizado automaticamente:
+
 ```bash
-# Atualizar memória do projeto Isabella
-cat << 'EOF' > .claude/memory/project/isabella-project.md
----
-name: Isabella Siqueira Advocacia Website
-description: Projeto do website para escritório de advocacia
-type: project
----
+# Atualizar memória do projeto
+bash .claude/tools/update-project-memory.sh
+# ou com análise de TODOs:
+bash .claude/tools/update-project-memory.sh --full
+```
 
-# Project Context: Isabella Siqueira Advocacia
+## Estrutura do Projeto Atual
 
-## Current Project
-- Name: Website Isabella Siqueira Advocacia
-- Type: Website jurídico profissional
-- Technologies: HTML, CSS, JavaScript
-- Development Stage: Implementation and testing
-- Focus Areas: Design profissional, informações legais, contato fácil
-- Client: Isabella Siqueira - Advogada
+O template inclui:
+- **92 agentes** especializados em diferentes áreas
+- **229 skills** pré-configuradas para diversos casos de uso
+- **Sistema de memória** avançado para contexto persistente
+- **Integração com GitHub** e outros serviços
+- **Configuração automática** do Claude Code

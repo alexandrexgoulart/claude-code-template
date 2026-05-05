@@ -25,6 +25,9 @@ O template já está configurado com:
 - **Setup automático** completo do Claude Code
 - **Integração fácil** com projetos existentes
 - **Documentação completa** e skills prontas para uso
+- **Sistema de memória** avançado para contexto persistente
+- **229 skills pré-configuradas** para diversos casos de uso
+- **92 agentes especializados** para automação de tarefas
 
 ## Atualizar Memória do Projeto
 

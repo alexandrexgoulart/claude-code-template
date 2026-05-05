@@ -47,7 +47,7 @@ cp .env.example .env
 ## 4. Decisões Arquiteturais Importantes
 
 <!-- Documente aqui as decisões que não devem ser questionadas -->
-- [Ex: Usamos Prisma e não Drizzle porque...]
+- [Ex: Usamos Prisma e não Drizzle porque tem melhor type safety]
 - [Ex: Autenticação via JWT em httpOnly cookies, não localStorage]
 - [Ex: Estado global via Zustand, não Redux]
 
