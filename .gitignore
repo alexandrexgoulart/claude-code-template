@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+*.pyc
+__pycache__/
+venv/
+.venv/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
+logs/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Claude Code memory (pode ser diferente por projeto)
+.claude/memory/
+.claude/memories/
+
+# Backups
+.claude.backup*/
+
+# Temp
+temp-template/
+_temp_repos/
