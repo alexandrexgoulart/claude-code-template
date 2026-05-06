@@ -58,8 +58,13 @@ function Install-Template {
     # Remover directorio temporario
     Remove-Item -Path $tempDir -Recurse -Force
 
-    # Inicializar memoria
-    Write-Status "Inicializando sistema de memoria..." "info"
+    # REMOVER SESSION.md copiado (é do template, não do novo projeto)
+    if (Test-Path "SESSION.md") {
+        Remove-Item -Path "SESSION.md" -Force
+    }
+
+    # Inicializar memoria (cria NOVO SESSION.md para este projeto)
+    Write-Status "Criando memoria para novo projeto..." "info"
     if (Test-Path "scripts\memory-manager.bat") {
         .\scripts\memory-manager.bat --init
     }
