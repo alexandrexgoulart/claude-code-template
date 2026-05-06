@@ -25,20 +25,92 @@ Este template inclui um sistema de memória persistente que mantém o contexto d
 | `memory-manager.sh` | `scripts/` | Gerenciador Bash |
 | `memory-manager.bat` | `scripts/` | Gerenciador Windows |
 
-### Uso do Sistema
+---
+
+## Instalação em Novo Projeto
+
+### Windows (PowerShell - RECOMENDADO)
+
+```powershell
+# 1. Clone o template
+git clone https://github.com/alexandrexgoulart/claude-code-template.git novo-projeto
+
+# 2. Entre no directorio
+cd novo-projeto
+
+# 3. Execute o script de instalacao (copia TODOS os arquivos automatico)
+.\scripts\install.ps1
+```
+
+### Windows (Manual)
+
+```powershell
+# 1. Clone o template
+git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
+
+# 2. COPIE TODOS OS ARQUIVOS (nao apenas .claude!)
+Copy-Item -Path "temp-template\*" -Destination "." -Recurse -Force
+
+# 3. Copie arquivos ocultos
+Copy-Item -Path "temp-template\.gitignore" -Destination "." -Force
+Copy-Item -Path "temp-template\.claude" -Destination "." -Recurse -Force
+
+# 4. Remova o temporario
+Remove-Item -Recurse -Force temp-template
+
+# 5. Inicialize a memoria
+.\scripts\memory-manager.bat --init
+```
+
+### Linux/Mac
 
 ```bash
+# 1. Clone o template
+git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
+
+# 2. Copie TODOS OS ARQUIVOS
+cp -r temp-template/* .
+cp -r temp-template/.* . 2>/dev/null || true
+
+# 3. Remova o temporario
+rm -rf temp-template
+
+# 4. Inicialize a memoria
+bash scripts/memory-manager.sh --init
+```
+
+### Erro Comum: Clone Incompleto
+
+Se o clone vier incompleto, tente:
+
+```powershell
+# Clone profonde
+git clone --depth 1 https://github.com/alexandrexgoulart/claude-code-template.git temp-test
+
+# Se shallow, busque tudo
+cd temp-test
+git fetch --unshallow
+
+# Verifique o que veio
+Get-ChildItem -Name
+```
+
+---
+
+## Uso do Sistema de Memória
+
+```powershell
 # Inicializar memória (projeto novo)
-scripts/memory-manager.bat --init
+scripts\memory-manager.bat --init
 
 # Mostrar memória atual
-scripts/memory-manager.bat --show
+scripts\memory-manager.bat --show
 
 # Criar backup
-scripts/memory-manager.bat --backup
+scripts\memory-manager.bat --backup
 
 # Restaurar backup
-scripts/memory-manager.bat --restore
+scripts\memory-manager.bat --restore
 ```
 
 ### Integração com Memória
@@ -53,7 +125,9 @@ scripts/integrate-claude-template.sh --with-memory
 scripts/integrate-claude-template.sh -m
 ```
 
-### Para Novo Projeto
+---
+
+## Para Novo Projeto
 
 1. Clone o template e copie o `.claude/` para seu projeto
 2. Inicie uma sessão com OpenCode/Claude/Jan.ai
@@ -61,22 +135,17 @@ scripts/integrate-claude-template.sh -m
 4. Na primeira sessão, responda as perguntas sobre o projeto
 5. O contexto será salvo automaticamente
 
-### Para Projeto Existente
-
-1. Copie o `.claude/` do template para seu projeto
-2. Execute: `scripts/memory-manager.bat --init`
-3. Inicie a sessão normalmente
-
 ---
 
-## Como Usar em Projetos Existentes
+## Para Projeto Existente
 
 ### Para projetos SEM pasta .claude existente:
 
 ```bash
 # Clone o template do repositório oficial
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
-cp -r temp-template/.claude ./
+cp -r temp-template/* ./
+cp -r temp-template/.* . 2>/dev/null || true
 rm -rf temp-template
 ```
 
@@ -88,9 +157,12 @@ cp -r .claude .claude.backup.$(date +%Y%m%d_%H%M%S)
 
 # Mesclar todo o conteúdo do template
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
-cp -r temp-template/.claude/* .claude/
+cp -r temp-template/* ./
+cp -r temp-template/.claude/* .claude/ 2>/dev/null || true
 rm -rf temp-template
 ```
+
+---
 
 ## Estrutura Completa do Claude Code
 
@@ -141,6 +213,9 @@ bash scripts/setup.sh
 # Novo projeto
 bash scripts/new-project-setup.sh
 
+# Instalação (Windows)
+.\scripts\install.ps1
+
 # Integração
 bash scripts/integrate-claude-template.sh
 
@@ -149,6 +224,9 @@ bash scripts/deploy.sh
 
 # Limpar memória
 bash scripts/clear-memory.sh
+
+# Gerenciar memória (Windows)
+.\scripts\memory-manager.bat
 ```
 
 ## Atualização da Memória do Projeto
@@ -161,6 +239,8 @@ bash .claude/tools/update-project-memory.sh
 # ou com análise de TODOs:
 bash .claude/tools/update-project-memory.sh --full
 ```
+
+---
 
 ## Estrutura de Diretórios do Projeto
 
