@@ -4,6 +4,71 @@
 
 Template completo do Claude Code com 287 skills e 61 agentes especializados prontos para uso.
 
+## Sistema de Memória Persistente
+
+Este template inclui um sistema de memória persistente que mantém o contexto do projeto entre sessões.
+
+### Como Funciona
+
+1. O arquivo `CLAUDE.md` instrui o Claude/OpenCode a ler o `SESSION.md` ao iniciar
+2. O `SESSION.md` contém todo o contexto do projeto (funcionalidades, tarefas, problemas)
+3. Ao final de cada sessão, o Claude atualiza automaticamente o `SESSION.md`
+4. Próximas sessões carregam o contexto automaticamente
+
+### Arquivos do Sistema
+
+| Arquivo | Localização | Descrição |
+|--------|-------------|-----------|
+| `CLAUDE.md` | Raiz do projeto | Instrui leitura de SESSION.md |
+| `SESSION.md` | Raiz do projeto | Arquivo de memória (único por projeto) |
+| `SESSION_TEMPLATE.md` | `.claude/memory/templates/` | Template para novos projetos |
+| `memory-manager.sh` | `scripts/` | Gerenciador Bash |
+| `memory-manager.bat` | `scripts/` | Gerenciador Windows |
+
+### Uso do Sistema
+
+```bash
+# Inicializar memória (projeto novo)
+scripts/memory-manager.bat --init
+
+# Mostrar memória atual
+scripts/memory-manager.bat --show
+
+# Criar backup
+scripts/memory-manager.bat --backup
+
+# Restaurar backup
+scripts/memory-manager.bat --restore
+```
+
+### Integração com Memória
+
+```bash
+# Integração padrão
+scripts/integrate-claude-template.sh
+
+# Integração COM sistema de memória
+scripts/integrate-claude-template.sh --with-memory
+# ou
+scripts/integrate-claude-template.sh -m
+```
+
+### Para Novo Projeto
+
+1. Clone o template e copie o `.claude/` para seu projeto
+2. Inicie uma sessão com OpenCode/Claude/Jan.ai
+3. O sistema detectará que não existe `SESSION.md` e criará automaticamente
+4. Na primeira sessão, responda as perguntas sobre o projeto
+5. O contexto será salvo automaticamente
+
+### Para Projeto Existente
+
+1. Copie o `.claude/` do template para seu projeto
+2. Execute: `scripts/memory-manager.bat --init`
+3. Inicie a sessão normalmente
+
+---
+
 ## Como Usar em Projetos Existentes
 
 ### Para projetos SEM pasta .claude existente:
