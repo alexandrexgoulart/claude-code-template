@@ -1,5 +1,14 @@
 # CLAUDE.md - Projeto Claude Code Template
 
+**INSTRUÇÃO DE INICIALIZAÇÃO (OBRIGATÓRIA):**
+1. **PRIMEIRA AÇÃO:** Ler o arquivo `SESSION.md` (na raiz do projeto) para obter todo o contexto da sessão anterior
+2. **SEGUNDA AÇÃO:** Se SESSION.md não existir, criar automaticamente usando o template em `.claude/memory/templates/SESSION_TEMPLATE.md`
+3. **TERCEIRA AÇÃO:** Continuar de onde a sessão anterior parou
+
+Este projeto tem um sistema de memória persistente. Sempre que iniciar uma sessão neste diretório, você deve ler o SESSION.md primeiro.
+
+---
+
 ## Visão Geral do Projeto
 
 Este é um template de projeto para desenvolvimento com Claude Code, seguindo padrões de Clean Architecture e práticas modernas de desenvolvimento de software.

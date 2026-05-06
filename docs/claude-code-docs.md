@@ -12,23 +12,37 @@ Template do Claude Code completamente atualizado com:
 
 ### Para projetos SEM pasta .claude existente:
 
+**Bash (Linux/Mac/Git Bash):**
 ```bash
-# Clone o template oficial
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
 cp -r temp-template/.claude ./
 rm -rf temp-template
 ```
 
+**PowerShell (Windows):**
+```powershell
+git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
+Copy-Item -Path "temp-template\.claude" -Destination ".claude" -Recurse -Force
+Remove-Item -Recurse -Force temp-template
+```
+
 ### Para projetos COM pasta .claude existente:
 
+**Bash (Linux/Mac/Git Bash):**
 ```bash
-# Backup da configuração existente (recomendado)
 cp -r .claude .claude.backup.$(date +%Y%m%d_%H%M%S)
-
-# Mesclar todo o conteúdo do template
 git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
 cp -r temp-template/.claude/* .claude/
 rm -rf temp-template
+```
+
+**PowerShell (Windows):**
+```powershell
+$timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
+Copy-Item -Path ".claude" -Destination ".claude.backup.$timestamp" -Recurse -Force
+git clone https://github.com/alexandrexgoulart/claude-code-template.git temp-template
+Copy-Item -Path "temp-template\.claude\*" -Destination ".claude\" -Recurse -Force
+Remove-Item -Recurse -Force temp-template
 ```
 
 ## Estrutura Completa do Claude Code
