@@ -79,8 +79,11 @@ Ao adicionar novos recursos de repositórios clonados:
 | `setup.sh` | Configuração básica do template |
 | `new-project-setup.sh` | Setup automático para novos projetos |
 | `integrate-claude-template.sh` | Integração com projetos existentes |
+| `integrate-claude-template.sh --with-memory` | Integração com sistema de memória |
 | `deploy.sh` | Instruções para deploy |
 | `clear-memory.sh` | Limpar memória do projeto |
+| `memory-manager.sh` | Gerenciador de memória (Bash/Linux/Mac) |
+| `memory-manager.bat` | Gerenciador de memória (Windows) |
 
 ## Tecnologias Padrão
 

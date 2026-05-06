@@ -5,8 +5,44 @@
 Template do Claude Code completamente atualizado com:
 - **287 skills** pré-configuradas para diferentes casos de uso
 - **61 agentes** especializados para automação de tarefas
-- Sistema de memória avançado para contexto persistente
+- **Sistema de memória persistente** (SESSION.md) para contexto entre sessões
 - Integração completa com GitHub e outros serviços
+
+## Sistema de Memória Persistente
+
+O template inclui um sistema de memória que mantém o contexto do projeto automaticamente entre sessões.
+
+### Arquivos do Sistema
+
+| Arquivo | Localização | Descrição |
+|---------|-------------|-----------|
+| `CLAUDE.md` | Raiz do projeto | Instrui a leitura do SESSION.md |
+| `SESSION.md` | Raiz do projeto | Memória do projeto (único por projeto) |
+| `memory-manager.sh` | `scripts/` | Gerenciador Bash |
+| `memory-manager.bat` | `scripts/` | Gerenciador Windows |
+
+### Como Funciona
+
+1. Ao iniciar sessão, o Claude lê CLAUDE.md → instruído a ler SESSION.md
+2. O SESSION.md contém contexto completo do projeto
+3. Ao final da sessão, contexto é atualizado automaticamente
+4. Próximas sessões carregam contexto automaticamente
+
+### Uso
+
+```bash
+# Inicializar memória
+scripts/memory-manager.bat --init
+
+# Ver memória atual
+scripts/memory-manager.bat --show
+
+# Backup
+scripts/memory-manager.bat --backup
+
+# Integração com memória
+scripts/integrate-claude-template.sh --with-memory
+```
 
 ## Como Usar em Projetos Existentes
 
